@@ -7,12 +7,18 @@ terraform {
   }
 }
 
-provider "azurerm" {
-  version = ">=2.0"
-  # The "feature" block is required for AzureRM provider 2.x.
-  features {}
+terraform {
+  required_providers {
+    azurerm = {
+      source  = "hashicorp/azurerm"
+      version = "~> 2.99"
+    }
+  }
 }
 
+provider "azurerm" {
+  features {}
+}
 resource "azurerm_resource_group" "resource_group_terraform" {
   name     = "terraform_resource_group_4"
   location = "West Europe"

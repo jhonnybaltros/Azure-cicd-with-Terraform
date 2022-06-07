@@ -2,3 +2,7 @@
 .idea/
 drop/
 go_build_main_go
+.terraform
+*.hcl
+*.tfstate
+*.backup
